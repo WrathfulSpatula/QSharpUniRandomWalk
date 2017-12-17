@@ -6,6 +6,6 @@ This is a simple example of quantum mechanics simulation in quantum computationa
 
 We assume a fixed length time step. During each time step, we step through an equal superposition of either standing still or taking one fixed length step from our current position toward our fixed destination.
 
-This is equivalent to a physical body having a 50% chance of emitting a fixed unit of energy in a fixed time, in a pure quantum state. Hence, it might be considered a simple quantum mechanics simulation.
+This is equivalent to a physical body having a 50% chance of emitting a fixed unit of energy per a fixed unit of time, in a pure quantum state. Hence, it might be considered a simple quantum mechanics simulation.
 
-(You must restore certain packages in this project in order for it to run.)
+(You must restore certain packages in this project in order to run it.)

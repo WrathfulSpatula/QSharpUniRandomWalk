@@ -36,8 +36,11 @@ namespace Quantum.QSharpUniRandomWalk
             double totalMass = 0.0;
             
 
+			//We instantiate a quantum simulator, and require that qubits are "cleaned" before release:
             using (var sim = new QuantumSimulator(throwOnReleasingQubitsNotInZeroState: true))
             {
+				//Our ultimate result is probabilistic, so we repeat the simulation many times and
+				// average the result. We also want the standard deviation, so we save all the results.
                 for (int trial = 0; trial < maxTrials; trial++)
                 {
                     masses[trial] = SimulateWalk.Run(sim, planckMassPowerOfTwo, planckTimes).Result;
@@ -48,6 +51,7 @@ namespace Quantum.QSharpUniRandomWalk
             double averageMass = totalMass / maxTrials;
             double sqrDiff = 0.0;
             double diff;
+			//Calculate the standard deviation of the simulation trials:
             for (int trial = 0; trial < maxTrials; trial++)
             {
                 diff = masses[trial] - averageMass;
@@ -55,6 +59,7 @@ namespace Quantum.QSharpUniRandomWalk
             }
             double stdDev = Math.Sqrt(sqrDiff / (maxTrials - 1));
 
+			//Output the results:
             Console.WriteLine($"Trials:{maxTrials}");
             Console.WriteLine($"Starting Point:{Math.Pow(2, planckMassPowerOfTwo) - 1}");
             Console.WriteLine($"Time units passed:{planckTimes}");
