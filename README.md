@@ -1,6 +1,6 @@
 Copyright (c) Daniel Strano 2017. All rights reserved.
 Licensed under the GNU General Public License V3.
-See LICENSE.txt in the project root or https://www.gnu.org/licenses/gpl-3.0.en.html for details.
+See LICENSE.md in the project root or https://www.gnu.org/licenses/gpl-3.0.en.html for details.
 
 This is a simple example of quantum mechanics simulation in quantum computational logic. It is essentially a unidirectional binary quantum random walk algorithm, from a positive starting point, heading toward zero.
 

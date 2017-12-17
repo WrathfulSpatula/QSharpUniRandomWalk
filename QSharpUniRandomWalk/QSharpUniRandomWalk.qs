@@ -1,6 +1,6 @@
 ﻿//Copyright (c) Daniel Strano 2017. All rights reserved.
 //Licensed under the GNU General Public License V3.
-//See LICENSE.txt in the project root or https://www.gnu.org/licenses/gpl-3.0.en.html for details.
+//See LICENSE.md in the project root or https://www.gnu.org/licenses/gpl-3.0.en.html for details.
 
 //(See Driver.cs for introduction.)
 
@@ -36,7 +36,7 @@ namespace Quantum.QSharpUniRandomWalk
 			//Maximum value for loop control:
 			let maxLCV = mpPowerOfTwo - 1;
 			//50/50 Superposition between "step" and "don't step" at each discrete time step
-			//is equivalent to Pi/4 rotation around the y-axis of spin by this angle, each time: 
+			//is equivalent to Pi/4 rotation around the y-axis of spin, each time: 
 			let angle = -3.141592653589793 / 4.0;
 			//This is our starting distance from the destination point (plus one).
 			mutable power = 1;
@@ -93,9 +93,9 @@ namespace Quantum.QSharpUniRandomWalk
 					}
 
 					//The qubits are now in their fully simulated, superposed and entangled end state.
-					// Ultimately, we have to measure a final pure state, breaking the superpositions and entanglements.
-					// Quantum measurement is nondeterministic and introduces randomness, so we repeat the simulation
-					// many times in the driver code and average the results.
+					// Ultimately, we have to measure a final state in the |0>/|1> basis for each bit, breaking the
+					// superpositions and entanglements. Quantum measurement is nondeterministic and introduces randomness,
+					// so we repeat the simulation many times in the driver code and average the results.
 					set power = 1;
 					for (j in 0..maxLCV) {
 						let res = M(qubits[j]);
